@@ -1,6 +1,6 @@
 import torch
 from torch.utils.data import Dataset, DataLoader
-from simulated.lstm.data_gen import get_simulated_data
+from predictive_maintenance.simulated.lstm.data_gen import get_simulated_data
 
 # --- 2. PyTorch Data Preparation (Dataset with timestamp) ---
 

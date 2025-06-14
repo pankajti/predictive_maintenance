@@ -1,17 +1,17 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from simulated.lstm.model import get_lstm_model
+from predictive_maintenance.simulated.lstm.model import get_lstm_model,get_bi_lstm_model
 import matplotlib.pyplot as plt
-from simulated.lstm.data_prep import get_data_loaders
-from simulated.lstm.utils import get_device
+from predictive_maintenance.simulated.lstm.data_prep import get_data_loaders
+from predictive_maintenance.simulated.lstm.utils import get_device
 
 MODEL_SAVE_PATH = 'best_rul_model_deeper.pth'  # Changed save path
 
 
 def main ():
     # --- 5. Training Loop with Early Stopping ---
-    NUM_EPOCHS = 100
+    NUM_EPOCHS = 20
     PATIENCE = 10
     MIN_DELTA = 0.001
 
@@ -21,7 +21,7 @@ def main ():
 
     training_losses = []
     validation_losses = []
-    model = get_lstm_model()
+    model = get_bi_lstm_model()
 
 
     print("\nStarting Training with Early Stopping (Deeper Model)...")
@@ -44,6 +44,7 @@ def main ():
             targets = targets.to(device)
 
             optimizer.zero_grad()
+
             outputs = model(inputs)
             loss = criterion(outputs.squeeze(), targets)
             loss.backward()

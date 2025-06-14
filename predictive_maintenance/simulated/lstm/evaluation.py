@@ -7,12 +7,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 import os  # For saving/loading models
-from simulated.lstm.training import get_lstm_model,MODEL_SAVE_PATH
-from simulated.lstm.data_prep import get_data_loaders
-from simulated.lstm.utils import get_device
+from predictive_maintenance.simulated.lstm.training import get_lstm_model,MODEL_SAVE_PATH,get_bi_lstm_model
+from predictive_maintenance.simulated.lstm.data_prep import get_data_loaders
+from predictive_maintenance.simulated.lstm.utils import get_device
 
 
-model = get_lstm_model()
+model = get_bi_lstm_model()
 train_dataloader, val_dataloader, test_datasets, test_sim_ids = get_data_loaders()
 device = get_device()
 device = torch.device("cpu")

@@ -196,7 +196,7 @@ else:
 model.to(device)
 
 # --- 5. Training Loop with Early Stopping ---
-NUM_EPOCHS = 100
+NUM_EPOCHS = 20
 PATIENCE = 10
 MIN_DELTA = 0.001
 
