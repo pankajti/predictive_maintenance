@@ -37,7 +37,7 @@ Based on my understanding typical methods fall into three broad categories:
 While traditional approaches are valuable, many overlook the **temporal dynamics** inherent in sensor data. This is where sequence models become more powerful.
 As per my understanding adopting an approach which retains the temporal nature of the data might be more useful and more aligned with the recent advancements 
 in the AI models like Transformers which is the basis of many Large Language Models(LLMs). However, I also experimented with simpler models like LSTM for a 
-gradual approach towards complexity.
+gradual approach 
 
 ---
 
@@ -48,7 +48,8 @@ Each 1-second window of vibration amplitudes is labeled with its corresponding R
 
 I explored two deep learning approaches:
 
-* **LSTM (Long Short-Term Memory)**: Captures sequence dependencies in vibration signals
+* **LSTM (Long Short-Term Memory)**: Captures sequence dependencies in vibration signals lstm implementation is at :
+   [LSTM Implementation] (https://github.com/pankajti/predictive_maintenance/tree/main/predictive_maintenance/simulated/lstm)
 * **Transformer** (in progress): Allows global attention across time for potentially better degradation modeling
 
 Using these models, I trained an RUL regressor and evaluated its predictions on synthetic failure curves.
@@ -65,10 +66,11 @@ In a real-world setting, the same pipeline can be extended by:
 
 ---
 
-## 🧩 Alignment with the Role
+## 🧩 Learning for me
 
-While my professional background is rooted in financial modeling and AI applications, this exercise has helped me **quickly ramp up on core concepts in engineering analytics**. 
-I’m confident I can apply my end-to-end ML system design experience to industrial settings, especially where time-series data, anomaly detection, 
-or predictive forecasting is involved.
+While my professional background is rooted in financial modeling and AI applications, this exercise has helped 
+me **quickly ramp up on core concepts in engineering analytics**. 
+I’m getting exposure and gaining confidence to apply my end-to-end ML system design experience to industrial settings, especially where time-series data, 
+anomaly detection, or predictive forecasting is involved.
 
 ---
