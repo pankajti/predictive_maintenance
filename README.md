@@ -48,8 +48,7 @@ Each 1-second window of vibration amplitudes is labeled with its corresponding R
 
 I explored two deep learning approaches:
 
-* **LSTM (Long Short-Term Memory)**: Captures sequence dependencies in vibration signals lstm implementation is at :
-   [LSTM Implementation] (https://github.com/pankajti/predictive_maintenance/tree/main/predictive_maintenance/simulated/lstm)
+* **LSTM (Long Short-Term Memory)**: Captures sequence dependencies in vibration signals lstm implementation is at : [LSTM Implementation](https://github.com/pankajti/predictive_maintenance/tree/main/predictive_maintenance/simulated/lstm)
 * **Transformer** (in progress): Allows global attention across time for potentially better degradation modeling
 
 Using these models, I trained an RUL regressor and evaluated its predictions on synthetic failure curves.
