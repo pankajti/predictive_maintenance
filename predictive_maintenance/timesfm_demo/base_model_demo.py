@@ -29,16 +29,14 @@ def main():
         freq=frequency_input,
     )
 
-    tfm.forecast_with_covariates()
 
-    tfm.forecast_on_df()
 
     predicted_future = point_forecast[0]
 
     print("Forecast complete!")
     print(f"Shape of predicted future: {predicted_future.shape}")
 
-    #plot_forecast(historical_data, predicted_future)
+    plot_forecast(historical_data, predicted_future)
 
 
 def get_model(context_length, horizon_length):

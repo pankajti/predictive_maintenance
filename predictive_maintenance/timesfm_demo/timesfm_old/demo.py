@@ -11,7 +11,7 @@ from timesfm import TimesFm, TimesFmHparams, TimesFmCheckpoint
 # Also, the checkpoint requires the Hugging Face repository ID.
 
 # These parameters should match the model you intend to load.
-# For 'google/timesfm-1.0-200m-pytorch':
+# For 'google/timesfm_old-1.0-200m-pytorch':
 #  - context_len: typically max 512, multiple of 32 (input_patch_len)
 #  - horizon_len: can be anything, but often <= context_len for general use cases.
 #  - input_patch_len: 32 (for v1.0)
@@ -38,7 +38,7 @@ checkpoint = TimesFmCheckpoint(
 print(f"Initializing TimesFM with context_len={hparams.context_len}, horizon_len={hparams.horizon_len}")
 
 # --- 3. Initialize the TimesFM Model ---
-# Ensure your environment has the 'timesfm[torch]' or 'timesfm[jax]' dependency installed.
+# Ensure your environment has the 'timesfm_old[torch]' or 'timesfm_old[jax]' dependency installed.
 tfm = timesfm.TimesFm(hparams=hparams, checkpoint=checkpoint)
 
 print("TimesFM model loaded successfully!")

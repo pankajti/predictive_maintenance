@@ -1,6 +1,6 @@
 import timesfm
 
-# Loading the timesfm-2.0 checkpoint:
+# Loading the timesfm_old-2.0 checkpoint:
 # For PAX
 tfm = timesfm.TimesFm(
       hparams=timesfm.TimesFmHparams(
@@ -12,7 +12,7 @@ tfm = timesfm.TimesFm(
 
       ),
       checkpoint=timesfm.TimesFmCheckpoint(
-          huggingface_repo_id="google/timesfm-2.0-500m-jax"),
+          huggingface_repo_id="google/timesfm_old-2.0-500m-jax"),
   )
 
 # For Torch
@@ -29,7 +29,7 @@ tfm = timesfm.TimesFm(
           huggingface_repo_id="google/timesfm-2.0-500m-pytorch"),
   )
 
-# Loading the timesfm-1.0 checkpoint:
+# Loading the timesfm_old-1.0 checkpoint:
 # For PAX
 tfm = timesfm.TimesFm(
       hparams=timesfm.TimesFmHparams(
