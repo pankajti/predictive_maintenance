@@ -6,7 +6,7 @@ from sklearn.decomposition import PCA
 from sklearn.ensemble import RandomForestRegressor # Example regression model
 from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
-import os 
+import os
 # Import TimesFM
 import timesfm
 from timesfm import TimesFm, TimesFmHparams, TimesFmCheckpoint
@@ -20,7 +20,8 @@ def main():
     FREQ = 1
     N_COMPONENTS = 10
     RUL_THRESHOLD = 130
-    DATA_PATH = r'/Users/pankajti/dev/data/kaggle/nasa/CMaps'
+    DATA_PATH = (r''
+                 r'/Users/pankajti/dev/data/kaggle/nasa/CMaps')
     columns = ['unit_number', 'time_in_cycles', 'op_setting_1', 'op_setting_2', 'op_setting_3'] + \
               [f'sensor_{i}' for i in range(1, 22)]
     dataset_id = 2;
@@ -185,8 +186,7 @@ def load_and_preprocess_data(dataset_id,DATA_PATH,columns,RUL_THRESHOLD):
         print("CMAPSS data not found. Please ensure 'CMAPSSData' folder is in the same directory as this script.")
         print("Download from: https://ti.arc.nasa.gov/tech/dash/groups/pcoe/prognostic-data-repository/#turbofan")
         exit()  # Exit if files are not found
-    train_df.drop(columns=['sensor_20', 'sensor_21'], inplace=True)
-    test_df.drop(columns=['sensor_20', 'sensor_21'], inplace=True)
+
     print("Train Data Shape:", train_df.shape)
     print("Test Data Shape:", test_df.shape)
     print("RUL Test Data Shape:", rul_test_df.shape)
